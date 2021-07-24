@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 if (process.env.PARSE_MODULES) require('module-alias')('.')
 
-import { a } from '@/placeholder'
+import { server } from './main/server'
 
-console.log(a)
+server.listen(3000, () => console.log('listening on 3000'))
