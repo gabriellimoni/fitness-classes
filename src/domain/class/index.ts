@@ -8,8 +8,11 @@ export class Class {
     this.validateClassData()
   }
 
-  async validateClassData(): Promise<void> {
-    // TODO
+  /**
+   * Throws if any data is invalid
+   */
+  validateClassData(): void {
+    // todo
   }
 
   getClassData(): Partial<IBaseId> & IClass {

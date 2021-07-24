@@ -1,14 +1,15 @@
-import { Class } from '@/domain'
+import { Class, IClass } from '@/domain'
 import { ClassRepository } from '../repositories/classRepository'
 
 export interface CreateClassUsecase {
-  createClass: (aClass: Class) => Promise<Class>
+  createClass: (classData: IClass) => Promise<Class>
 }
 
 export class CreateClassImplementation implements CreateClassUsecase {
   constructor(private readonly classRepository: ClassRepository) {}
 
-  async createClass(aClass: Class): Promise<Class> {
+  async createClass(classData: IClass): Promise<Class> {
+    const aClass = new Class(classData)
     const createdClassId = await this.classRepository.create(
       aClass.getClassData(),
     )

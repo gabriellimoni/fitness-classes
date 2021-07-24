@@ -10,6 +10,7 @@ export class MemoryClassReporitory implements ClassRepository {
       ...classData,
       id: newId,
     })
+    console.log(classes)
     return newId
   }
 
